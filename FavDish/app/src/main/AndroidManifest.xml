@@ -11,7 +11,8 @@
         android:theme="@style/Theme.FavDish">
         <activity
             android:name=".SplashActivity"
-            android:exported="true">
+            android:exported="true"
+            android:theme="@style/Theme.FavDish.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
