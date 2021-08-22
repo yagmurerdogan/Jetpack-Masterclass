@@ -7,6 +7,7 @@
         <entry key="app/src/main/res/layout/activity_splash.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.1" />
         <entry key="app/src/main/res/menu/bottom_nav_menu.xml" value="0.1" />
+        <entry key="app/src/main/res/menu/menu_all_dishes.xml" value="0.1" />
       </map>
     </option>
   </component>
