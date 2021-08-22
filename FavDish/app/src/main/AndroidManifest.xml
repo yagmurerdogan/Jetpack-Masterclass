@@ -12,6 +12,7 @@
         <activity
             android:name=".view.activities.AddUpdateDishActivity"
             android:label="@string/lbl_add_dish"
+            android:configChanges="orientation"
             android:theme="@style/Theme.FavDish.NoActionBar"
             android:exported="true" />
         <activity
