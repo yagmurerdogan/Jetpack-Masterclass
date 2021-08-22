@@ -10,11 +10,11 @@ import androidx.lifecycle.ViewModelProvider
 import com.yagmurerdogan.favdish.R
 import com.yagmurerdogan.favdish.databinding.FragmentAllDishesBinding
 import com.yagmurerdogan.favdish.view.activities.AddUpdateDishActivity
-import com.yagmurerdogan.favdish.viewmodel.home.HomeViewModel
+import com.yagmurerdogan.favdish.viewmodel.alldishes.AllDishesViewModel
 
 class AllDishesFragment : Fragment() {
 
-    private lateinit var homeViewModel: HomeViewModel
+    private lateinit var homeViewModel: AllDishesViewModel
     private var _binding: FragmentAllDishesBinding? = null
 
     // This property is only valid between onCreateView and
@@ -32,7 +32,7 @@ class AllDishesFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         homeViewModel =
-            ViewModelProvider(this).get(HomeViewModel::class.java)
+            ViewModelProvider(this).get(AllDishesViewModel::class.java)
 
         _binding = FragmentAllDishesBinding.inflate(inflater, container, false)
         val root: View = binding.root
