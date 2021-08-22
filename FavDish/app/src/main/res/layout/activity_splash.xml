@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:background="@color/primary_dark_color"
     android:layout_height="match_parent"
-    tools:context=".SplashActivity">
+    tools:context=".view.activities.SplashActivity">
 
     <TextView
         android:id="@+id/tv_app_name"

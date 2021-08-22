@@ -10,7 +10,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FavDish">
         <activity
-            android:name=".SplashActivity"
+            android:name=".view.activities.AddUpdateDishActivity"
+            android:exported="true" />
+        <activity
+            android:name=".view.activities.SplashActivity"
             android:exported="true"
             android:theme="@style/Theme.FavDish.NoActionBar">
             <intent-filter>
@@ -20,11 +23,9 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".MainActivity"
+            android:name=".view.activities.MainActivity"
             android:exported="true"
-            android:label="@string/app_name">
-
-        </activity>
+            android:label="@string/app_name"></activity>
     </application>
 
 </manifest>

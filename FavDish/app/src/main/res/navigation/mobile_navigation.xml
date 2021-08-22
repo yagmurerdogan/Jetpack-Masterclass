@@ -7,19 +7,19 @@
 
     <fragment
         android:id="@+id/navigation_home"
-        android:name="com.yagmurerdogan.favdish.ui.home.HomeFragment"
+        android:name="com.yagmurerdogan.favdish.view.fragments.HomeFragment"
         android:label="@string/title_home"
         tools:layout="@layout/fragment_home" />
 
     <fragment
         android:id="@+id/navigation_dashboard"
-        android:name="com.yagmurerdogan.favdish.ui.dashboard.DashboardFragment"
+        android:name="com.yagmurerdogan.favdish.view.fragments.DashboardFragment"
         android:label="@string/title_dashboard"
         tools:layout="@layout/fragment_dashboard" />
 
     <fragment
         android:id="@+id/navigation_notifications"
-        android:name="com.yagmurerdogan.favdish.ui.notifications.NotificationsFragment"
+        android:name="com.yagmurerdogan.favdish.view.fragments.NotificationsFragment"
         android:label="@string/title_notifications"
         tools:layout="@layout/fragment_notifications" />
 </navigation>
