@@ -4,5 +4,12 @@
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
     <string name="splash_screen_title">Fav Dish</string>
-    <string name="add_update_dish_label">Add Dish</string>
+    <string name="lbl_add_dish">Add Dish</string>
+    <string name="image_content_description">image</string>
+    <string name="lbl_title">Title</string>
+    <string name="lbl_type">Type</string>
+    <string name="lbl_category">Category</string>
+    <string name="lbl_ingredients">Ingredients</string>
+    <string name="lbl_cooking_time_in_minutes">Cooking Time In Minutes</string>
+    <string name="lbl_direction_to_cook">Direction To Cook</string>
 </resources>

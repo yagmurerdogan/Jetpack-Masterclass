@@ -11,7 +11,7 @@
         android:theme="@style/Theme.FavDish">
         <activity
             android:name=".view.activities.AddUpdateDishActivity"
-            android:label="@string/add_update_dish_label"
+            android:label="@string/lbl_add_dish"
             android:theme="@style/Theme.FavDish.NoActionBar"
             android:exported="true" />
         <activity
