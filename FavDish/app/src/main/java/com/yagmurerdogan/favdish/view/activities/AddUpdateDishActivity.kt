@@ -18,6 +18,7 @@ import android.graphics.Bitmap
 import android.net.Uri
 import android.provider.MediaStore
 import android.provider.Settings
+import android.util.Log
 import androidx.core.content.ContextCompat
 import com.karumi.dexter.MultiplePermissionsReport
 import com.karumi.dexter.PermissionToken
@@ -69,7 +70,6 @@ class AddUpdateDishActivity : AppCompatActivity(), View.OnClickListener {
 
             Dexter.withContext(this).withPermissions(
                 Manifest.permission.READ_EXTERNAL_STORAGE,
-                //Manifest.permission.WRITE_EXTERNAL_STORAGE,
                 Manifest.permission.CAMERA
             ).withListener(object : MultiplePermissionsListener {
                 override fun onPermissionsChecked(report: MultiplePermissionsReport?) {
@@ -99,11 +99,12 @@ class AddUpdateDishActivity : AppCompatActivity(), View.OnClickListener {
                 Manifest.permission.READ_EXTERNAL_STORAGE
             ).withListener(object : PermissionListener {
                 override fun onPermissionGranted(p0: PermissionGrantedResponse?) {
-                    Toast.makeText(
-                        this@AddUpdateDishActivity,
-                        "You've the Gallery permission now to select image.",
-                        Toast.LENGTH_SHORT
-                    ).show()
+
+                    val galleryIntent = Intent(
+                        Intent.ACTION_PICK,
+                        MediaStore.Images.Media.EXTERNAL_CONTENT_URI
+                    )
+                    startActivityForResult(galleryIntent, GALLERY)
                 }
 
                 override fun onPermissionDenied(p0: PermissionDeniedResponse?) {
@@ -142,6 +143,20 @@ class AddUpdateDishActivity : AppCompatActivity(), View.OnClickListener {
                     )
                 }
             }
+
+            if (requestCode == GALLERY) {
+                data?.let {
+                    val selectedPhotoUri = data.data
+                    mBinding.ivDishImage.setImageURI(selectedPhotoUri)
+
+                    mBinding.ivAddDishImage.setImageDrawable(
+                        ContextCompat.getDrawable(this, R.drawable.ic_vector_edit)
+                    )
+                }
+            }
+
+        } else if (resultCode == Activity.RESULT_CANCELED) {
+            Log.e("User cancelled", "Image selection")
         }
     }
 
@@ -168,5 +183,6 @@ class AddUpdateDishActivity : AppCompatActivity(), View.OnClickListener {
 
     companion object {
         private const val CAMERA = 1
+        private const val GALLERY = 2
     }
 }
