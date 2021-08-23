@@ -9,7 +9,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.yagmurerdogan.favdish.databinding.FragmentDashboardBinding
-import com.yagmurerdogan.favdish.viewmodel.dashboard.DashboardViewModel
+import com.yagmurerdogan.favdish.viewmodel.DashboardViewModel
 
 class DashboardFragment : Fragment() {
 

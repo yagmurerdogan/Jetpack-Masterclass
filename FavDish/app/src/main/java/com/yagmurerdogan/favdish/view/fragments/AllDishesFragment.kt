@@ -10,7 +10,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.yagmurerdogan.favdish.R
 import com.yagmurerdogan.favdish.databinding.FragmentAllDishesBinding
 import com.yagmurerdogan.favdish.view.activities.AddUpdateDishActivity
-import com.yagmurerdogan.favdish.viewmodel.alldishes.AllDishesViewModel
+import com.yagmurerdogan.favdish.viewmodel.AllDishesViewModel
 
 class AllDishesFragment : Fragment() {
 
