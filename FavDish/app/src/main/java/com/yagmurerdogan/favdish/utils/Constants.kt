@@ -37,7 +37,7 @@ object Constants {
         list.add("Sandwich")
         list.add("Tea & Coffee")
         list.add("Pizza")
-        list.add("Pizza")
+        list.add("Others")
 
         return list
     }
