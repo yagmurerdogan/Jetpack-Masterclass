@@ -1,6 +1,5 @@
 package com.yagmurerdogan.favdish.model.entities
 
-import android.media.Image
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
