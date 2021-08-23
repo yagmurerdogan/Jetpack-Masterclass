@@ -24,6 +24,7 @@ import android.provider.Settings
 import android.util.Log
 import androidx.core.content.ContextCompat
 import androidx.core.graphics.drawable.toBitmap
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.DataSource
 import com.bumptech.glide.load.engine.DiskCacheStrategy
@@ -37,6 +38,9 @@ import com.karumi.dexter.listener.PermissionGrantedResponse
 import com.karumi.dexter.listener.PermissionRequest
 import com.karumi.dexter.listener.multi.MultiplePermissionsListener
 import com.karumi.dexter.listener.single.PermissionListener
+import com.yagmurerdogan.favdish.databinding.DialogCustomListBinding
+import com.yagmurerdogan.favdish.utils.Constants
+import com.yagmurerdogan.favdish.view.adapters.CustomListItemAdapter
 import java.io.File
 import java.io.FileOutputStream
 import java.io.IOException
@@ -56,6 +60,10 @@ class AddUpdateDishActivity : AppCompatActivity(), View.OnClickListener {
         setupActionBar()
 
         mBinding.ivAddDishImage.setOnClickListener(this)
+
+        mBinding.etType.setOnClickListener(this)
+        mBinding.etCategory.setOnClickListener(this)
+        mBinding.etCookingTime.setOnClickListener(this)
     }
 
     private fun setupActionBar() {
@@ -66,11 +74,35 @@ class AddUpdateDishActivity : AppCompatActivity(), View.OnClickListener {
         }
     }
 
-    override fun onClick(p0: View?) {
-        if (p0 != null) {
-            when (p0.id) {
+    override fun onClick(v: View?) {
+        if (v != null) {
+            when (v.id) {
                 R.id.iv_add_dish_image -> {
                     customImageSelectionDialog()
+                    return
+                }
+                R.id.et_type -> {
+                    customItemsListDialog(
+                        resources.getString(R.string.title_select_dish_type),
+                        Constants.dishTypes(),
+                        Constants.DISH_TYPE
+                    )
+                    return
+                }
+                R.id.et_category -> {
+                    customItemsListDialog(
+                        resources.getString(R.string.title_select_dish_category),
+                        Constants.dishCategories(),
+                        Constants.DISH_CATEGORY
+                    )
+                    return
+                }
+                R.id.et_cooking_time -> {
+                    customItemsListDialog(
+                        resources.getString(R.string.title_select_dish_cooking_time),
+                        Constants.dishCookTime(),
+                        Constants.DISH_COOKING_TIME
+                    )
                     return
                 }
             }
@@ -254,6 +286,20 @@ class AddUpdateDishActivity : AppCompatActivity(), View.OnClickListener {
             e.printStackTrace()
         }
         return file.absolutePath
+    }
+
+    private fun customItemsListDialog(title: String, itemList: List<String>, selection: String) {
+        val customListDialog = Dialog(this)
+        val binding: DialogCustomListBinding = DialogCustomListBinding.inflate(layoutInflater)
+
+        customListDialog.setContentView(binding.root)
+        binding.tvTitle.text = title
+
+        binding.rvList.layoutManager = LinearLayoutManager(this)
+
+        val adapter = CustomListItemAdapter(this, itemList, selection)
+        binding.rvList.adapter = adapter
+        customListDialog.show()
     }
 
     companion object {
