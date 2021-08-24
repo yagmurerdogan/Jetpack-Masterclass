@@ -9,7 +9,7 @@
         android:id="@+id/navigation_home"
         android:name="com.yagmurerdogan.favdish.view.fragments.AllDishesFragment"
         android:label="@string/title_home"
-        tools:layout="@layout/fragment_all_dishes" />
+        tools:layout="@layout/fragment_home" />
 
     <fragment
         android:id="@+id/navigation_dashboard"
