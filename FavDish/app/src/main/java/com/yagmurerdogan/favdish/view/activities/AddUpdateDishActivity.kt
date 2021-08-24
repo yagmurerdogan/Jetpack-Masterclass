@@ -23,6 +23,7 @@ import android.provider.MediaStore
 import android.provider.Settings
 import android.text.TextUtils
 import android.util.Log
+import androidx.activity.viewModels
 import androidx.core.content.ContextCompat
 import androidx.core.graphics.drawable.toBitmap
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -39,9 +40,13 @@ import com.karumi.dexter.listener.PermissionGrantedResponse
 import com.karumi.dexter.listener.PermissionRequest
 import com.karumi.dexter.listener.multi.MultiplePermissionsListener
 import com.karumi.dexter.listener.single.PermissionListener
+import com.yagmurerdogan.favdish.application.FavDishApplication
 import com.yagmurerdogan.favdish.databinding.DialogCustomListBinding
+import com.yagmurerdogan.favdish.model.entities.FavDish
 import com.yagmurerdogan.favdish.utils.Constants
 import com.yagmurerdogan.favdish.view.adapters.CustomListItemAdapter
+import com.yagmurerdogan.favdish.viewmodel.FavDishViewModel
+import com.yagmurerdogan.favdish.viewmodel.FavDishViewModelFactory
 import java.io.File
 import java.io.FileOutputStream
 import java.io.IOException
@@ -52,6 +57,11 @@ class AddUpdateDishActivity : AppCompatActivity(), View.OnClickListener {
 
     private lateinit var mBinding: ActivityAddUpdateDishBinding
     private lateinit var mCustomListDialog: Dialog
+
+    private val mFavDishViewModel: FavDishViewModel by viewModels {
+        FavDishViewModelFactory((application as FavDishApplication).repository)
+    }
+
     private var mImagePath: String = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -169,11 +179,25 @@ class AddUpdateDishActivity : AppCompatActivity(), View.OnClickListener {
                             ).show()
                         }
                         else -> {
+                            val favDishDetails: FavDish = FavDish(
+                                mImagePath,
+                                Constants.DISH_IMAGE_SOURCE_LOCAL,
+                                title,
+                                type,
+                                category,
+                                ingredients,
+                                cookingTimeInMinutes,
+                                cookingDirection,
+                                false
+                            )
+                            mFavDishViewModel.insert(favDishDetails)
                             Toast.makeText(
                                 this@AddUpdateDishActivity,
-                                "All the entries are valid.",
+                                "You successfully added your favorite dish details.",
                                 Toast.LENGTH_SHORT
                             ).show()
+                            Log.i("Insertion", "Success")
+                            finish()
                         }
                     }
                 }
