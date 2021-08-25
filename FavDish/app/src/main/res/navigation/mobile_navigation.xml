@@ -13,7 +13,7 @@
 
     <fragment
         android:id="@+id/navigation_favorite_dishes"
-        android:name="com.yagmurerdogan.favdish.view.fragments.DashboardFragment"
+        android:name="com.yagmurerdogan.favdish.view.fragments.FavoriteDishesFragment"
         android:label="@string/title_favorite_dishes"
         tools:layout="@layout/fragment_favorite_dishes" />
 
