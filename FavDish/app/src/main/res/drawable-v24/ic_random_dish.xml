@@ -1,0 +1,19 @@
+<!--TODO Step 9: Add random_dish vector icon.-->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="512"
+    android:viewportHeight="512">
+    <path
+        android:fillColor="#FF000000"
+        android:pathData="m331,256c-41.353,0 -75,33.647 -75,75v15h150v-15c0,-41.353 -33.647,-75 -75,-75z" />
+    <path
+        android:fillColor="#FF000000"
+        android:pathData="m151,512h361v-392h-361zM436,466h-210v-30h210zM196,346h30v-15c0,-52.755 39.25,-96.127 90,-103.484v-31.516h30v31.516c50.75,7.357 90,50.729 90,103.484v15h30v30h-270z" />
+    <path
+        android:fillColor="#FF000000"
+        android:pathData="m121,90 l180,-90h-301v391h121z" />
+    <path
+        android:fillColor="#FF000000"
+        android:pathData="m301,33.6 l-112.8,56.4h112.8z" />
+</vector>
