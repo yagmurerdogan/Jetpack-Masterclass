@@ -41,12 +41,12 @@ class MainActivity : AppCompatActivity() {
         return NavigationUI.navigateUp(mNavController, null)
     }
 
-    fun hideButtonNavigationView() {
+    fun hideBottomNavigationView() {
         mbinding.navView.clearAnimation()
         mbinding.navView.animate().translationY(mbinding.navView.height.toFloat()).duration = 300
     }
 
-    fun showButtonNavigationView() {
+    fun showBottomNavigationView() {
         mbinding.navView.clearAnimation()
         mbinding.navView.animate().translationY(0f).duration = 300
     }
