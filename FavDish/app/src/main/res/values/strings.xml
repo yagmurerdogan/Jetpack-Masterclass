@@ -18,6 +18,8 @@
     <string name="lbl_cooking_time_in_minutes">Cooking Time In Minutes</string>
     <string name="lbl_direction_to_cook">Direction To Cook</string>
     <string name="lbl_update_dish">UPDATE DISH</string>
+    <string name="lbl_yes">Yes</string>
+    <string name="lbl_no">No</string>
 
     <string name="title_select_image_action">Select Image Action</string>
     <string name="lbl_camera">Camera</string>
@@ -43,6 +45,7 @@
 
     <string name="msg_added_to_favorite">You have added the dish to your favorites.</string>
     <string name="msg_removed_from_favorite">You have removed the dish from your favorites.</string>
+    <string name="msg_delete_dish_dialog">Are you sure you wants to delete %1$.</string>
 
     <string name="action_edit_dish">EDIT DISH</string>
     <string name="action_delete_dish">DELETE DISH</string>

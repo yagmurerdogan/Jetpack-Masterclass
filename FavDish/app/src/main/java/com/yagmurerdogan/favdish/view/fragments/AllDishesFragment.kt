@@ -1,5 +1,6 @@
 package com.yagmurerdogan.favdish.view.fragments
 
+import android.app.AlertDialog
 import android.content.Intent
 import android.os.Bundle
 import android.view.*
@@ -35,7 +36,7 @@ class AllDishesFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-   mBinding =
+        mBinding =
             FragmentAllDishesBinding.inflate(inflater, container, false)
         return mBinding.root
     }
@@ -70,13 +71,36 @@ class AllDishesFragment : Fragment() {
     }
 
     fun dishDetails(favDish: FavDish) {
-        findNavController().navigate(AllDishesFragmentDirections.actionAllDishesToDetails(
-            favDish
-        ))
+        findNavController().navigate(
+            AllDishesFragmentDirections.actionAllDishesToDetails(
+                favDish
+            )
+        )
 
         if (requireActivity() is MainActivity) {
             (activity as MainActivity?)?.hideBottomNavigationView()
         }
+    }
+
+    fun deleteDish(dish: FavDish) {
+        val builder = AlertDialog.Builder(requireActivity())
+        with(builder) {
+            setTitle(resources.getString(R.string.title_delete_dish))
+            setMessage(resources.getString(R.string.msg_delete_dish_dialog))
+            setIcon(android.R.drawable.ic_dialog_alert)
+            setPositiveButton(resources.getString(R.string.lbl_yes)) { dialogInterface, _ ->
+                mFavDishViewModel.delete(dish)
+                dialogInterface.dismiss()
+            }
+            setNegativeButton(resources.getString(R.string.lbl_no)) { dialogInterface, _ ->
+                dialogInterface.dismiss()
+            }
+        }
+
+
+        val alertDialog : AlertDialog = builder.create()
+        alertDialog.setCancelable(false)
+        alertDialog.show()
     }
 
     override fun onResume() {
