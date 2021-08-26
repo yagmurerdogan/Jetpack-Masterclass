@@ -17,6 +17,7 @@
     <string name="lbl_ingredients">Ingredients</string>
     <string name="lbl_cooking_time_in_minutes">Cooking Time In Minutes</string>
     <string name="lbl_direction_to_cook">Direction To Cook</string>
+    <string name="lbl_update_dish">UPDATE DISH</string>
 
     <string name="title_select_image_action">Select Image Action</string>
     <string name="lbl_camera">Camera</string>
@@ -24,6 +25,9 @@
     <string name="title_select_dish_type">SELECT DISH TYPE</string>
     <string name="title_select_dish_category">SELECT DISH CATEGORY</string>
     <string name="title_select_dish_cooking_time">SELECT COOKING TIME IN MINUTES</string>
+    <string name="title_edit_dish">Edit Dish</string>
+    <string name="title_add_dish">Add Dish</string>
+    <string name="title_delete_dish">Delete Dish</string>
 
     <string name="err_msg_select_dish_image">Select dish image.</string>
     <string name="err_msg_enter_dish_title">Enter dish title.</string>
