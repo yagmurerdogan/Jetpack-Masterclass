@@ -49,4 +49,6 @@
 
     <string name="action_edit_dish">EDIT DISH</string>
     <string name="action_delete_dish">DELETE DISH</string>
+    <string name="action_filter_dishes">Filter Dishes</string>
+    <string name="title_select_item_to_filter">SELECT ITEM TO FILTER</string>
 </resources>
