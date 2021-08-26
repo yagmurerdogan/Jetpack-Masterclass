@@ -13,17 +13,30 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <!--The "tools" param is used to show the text only in the designing view
- it will not be displayed once you run the app.-->
-
-        <ImageView
-            android:id="@+id/iv_dish_image"
+        <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="@dimen/_120sdp"
-            android:layout_margin="@dimen/_1sdp"
-            android:contentDescription="@string/image_content_description"
-            android:scaleType="fitXY"
-            tools:src="@mipmap/ic_launcher" />
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/iv_dish_image"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_120sdp"
+                android:layout_margin="@dimen/_1sdp"
+                android:contentDescription="@string/image_content_description"
+                android:scaleType="fitXY"
+                tools:src="@mipmap/ic_launcher" />
+
+            <ImageButton
+                android:id="@+id/ib_more"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top|right"
+                android:layout_margin="@dimen/_5sdp"
+                android:background="@android:color/transparent"
+                android:contentDescription="@string/image_content_description"
+                android:foreground="?attr/selectableItemBackgroundBorderless"
+                android:src="@drawable/ic_more" />
+        </FrameLayout>
 
         <TextView
             android:id="@+id/tv_dish_title"

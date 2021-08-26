@@ -39,4 +39,7 @@
 
     <string name="msg_added_to_favorite">You have added the dish to your favorites.</string>
     <string name="msg_removed_from_favorite">You have removed the dish from your favorites.</string>
+
+    <string name="action_edit_dish">EDIT DISH</string>
+    <string name="action_delete_dish">DELETE DISH</string>
 </resources>
