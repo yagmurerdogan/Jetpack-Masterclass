@@ -48,8 +48,4 @@ Sign Up Spoonacular API website and get your free API key. Open Constants.kt fil
 <img src="https://user-images.githubusercontent.com/47380312/131144966-45fc25b7-8e5a-412f-ab48-8d16ba7302a1.png" align = "center" width="80%"/>
 
 
-
-
-
-
-
+## 👉🏻 [Udemy Course](https://www.udemy.com/course/android-jetpack-masterclass/)
