@@ -68,7 +68,8 @@ class DishDetailsFragment : Fragment() {
                 Glide.with(requireActivity())
                     .load(it.dishDetails.image)
                     .centerCrop()
-                    .listener(object : RequestListener<Drawable> {
+                        /*
+                        .listener(object : RequestListener<Drawable> {
                         override fun onLoadFailed(
                             @Nullable e: GlideException?,
                             model: Any?,
@@ -96,6 +97,8 @@ class DishDetailsFragment : Fragment() {
                             return false
                         }
                     })
+                         */
+
                     .into(mBinding!!.ivDishImage)
             } catch (e: IOException) {
                 e.printStackTrace()
