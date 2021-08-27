@@ -56,6 +56,7 @@
     <string name="action_edit_dish">EDIT DISH</string>
     <string name="action_delete_dish">DELETE DISH</string>
     <string name="action_filter_dishes">Filter Dishes</string>
+    <string name="action_share_dish">Share Dish</string>
 
     <string name="please_wait">Please Wait&#8230;</string>
 
