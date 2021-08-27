@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?><!--All the values used are defined in the constant files.-->
-<!--TODO Step 4: Add the favorite icon round background.-->
 <shape xmlns:android="http://schemas.android.com/apk/res/android"
     android:shape="rectangle">
 

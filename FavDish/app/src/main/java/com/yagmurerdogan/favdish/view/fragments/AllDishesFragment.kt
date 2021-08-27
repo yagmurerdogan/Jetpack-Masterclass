@@ -58,8 +58,6 @@ class AllDishesFragment : Fragment() {
         mFavDishViewModel.allDishesList.observe(viewLifecycleOwner) { dishes ->
             dishes.let {
 
-                // TODO Step 9: Pass the dishes list to the adapter class.
-                // START
                 if (it.isNotEmpty()) {
 
                     mBinding.rvDishesList.visibility = View.VISIBLE

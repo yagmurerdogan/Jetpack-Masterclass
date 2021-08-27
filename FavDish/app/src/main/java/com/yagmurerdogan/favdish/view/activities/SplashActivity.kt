@@ -46,7 +46,6 @@ class SplashActivity : AppCompatActivity() {
             }
 
             override fun onAnimationRepeat(p0: Animation?) {
-                TODO("Not yet implemented")
             }
 
         })
