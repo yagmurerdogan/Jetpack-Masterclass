@@ -58,6 +58,9 @@
     <string name="action_filter_dishes">Filter Dishes</string>
     <string name="action_share_dish">Share Dish</string>
 
+    <string name="notification_title">Checkout new dish recipes</string>
+    <string name="notification_subtitle">Tap for more detail</string>
+
     <string name="please_wait">Please Wait&#8230;</string>
 
 </resources>
