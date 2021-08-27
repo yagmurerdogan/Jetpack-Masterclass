@@ -22,6 +22,7 @@
         <entry key="app/src/main/res/layout/fragment_dish_details.xml" value="0.2269021739130435" />
         <entry key="app/src/main/res/layout/fragment_favorite_dishes.xml" value="0.19199594731509625" />
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/fragment_random_dish.xml" value="0.2269021739130435" />
         <entry key="app/src/main/res/layout/item_custom_list.xml" value="0.19199594731509625" />
         <entry key="app/src/main/res/layout/item_dish_layout.xml" value="0.1" />
         <entry key="app/src/main/res/menu/bottom_nav_menu.xml" value="0.1" />
