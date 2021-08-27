@@ -47,6 +47,10 @@ class RandomDishFragment : Fragment() {
         mRandomDishViewModel.getRandomRecipeFromAPI()
 
         randomDishViewModelObserver()
+
+        mBinding!!.srlRandomDish.setOnRefreshListener {
+            mRandomDishViewModel.getRandomRecipeFromAPI()
+        }
     }
 
     private fun randomDishViewModelObserver() {
@@ -55,6 +59,9 @@ class RandomDishFragment : Fragment() {
                 Log.i(
                     "Random Dish Response", "$randomDishResponse.recipes[0]"
                 )
+                if (mBinding!!.srlRandomDish.isRefreshing) {
+                    mBinding!!.srlRandomDish.isRefreshing = false
+                }
                 setRandomDishResponseInUI(randomDishResponse.recipes[0])
             }
         }
@@ -64,6 +71,9 @@ class RandomDishFragment : Fragment() {
                 Log.i(
                     "Random Dish API Error", "$dataError"
                 )
+                if (mBinding!!.srlRandomDish.isRefreshing) {
+                    mBinding!!.srlRandomDish.isRefreshing = false
+                }
             }
 
         })
@@ -116,40 +126,60 @@ class RandomDishFragment : Fragment() {
             mBinding!!.tvCookingDirection.text = Html.fromHtml(recipe.instructions)
         }
 
+        mBinding!!.ivFavoriteDish.setImageDrawable(
+            ContextCompat.getDrawable(
+                requireActivity(),
+                R.drawable.ic_favorite_unselected
+            )
+        )
+
+        var addedToFavorites = false
+
         mBinding!!.tvCookingTime.text = resources.getString(
             R.string.lbl_estimate_cooking_time,
             recipe.readyInMinutes.toString()
         )
 
         mBinding!!.ivFavoriteDish.setOnClickListener {
-            val randomDishDetails = FavDish(
-                recipe.image,
-                Constants.DISH_IMAGE_SOURCE_ONLINE,
-                recipe.title,
-                dishType,
-                "Other",
-                ingredients,
-                recipe.readyInMinutes.toString(),
-                recipe.instructions,
-                true
-            )
-            val mFavDishViewModel: FavDishViewModel by viewModels {
-                FavDishViewModelFactory((requireActivity().application as FavDishApplication).repository)
-            }
-            mFavDishViewModel.insert(randomDishDetails)
 
-            mBinding!!.ivFavoriteDish.setImageDrawable(
-                ContextCompat.getDrawable(
+            if (addedToFavorites) {
+                Toast.makeText(
                     requireActivity(),
-                    R.drawable.ic_favorite_selected
+                    resources.getString(R.string.msg_already_added_to_favorite),
+                    Toast.LENGTH_SHORT
+                ).show()
+            } else {
+                val randomDishDetails = FavDish(
+                    recipe.image,
+                    Constants.DISH_IMAGE_SOURCE_ONLINE,
+                    recipe.title,
+                    dishType,
+                    "Other",
+                    ingredients,
+                    recipe.readyInMinutes.toString(),
+                    recipe.instructions,
+                    true
                 )
-            )
+                val mFavDishViewModel: FavDishViewModel by viewModels {
+                    FavDishViewModelFactory((requireActivity().application as FavDishApplication).repository)
+                }
+                mFavDishViewModel.insert(randomDishDetails)
 
-            Toast.makeText(
-                requireActivity(),
-                resources.getString(R.string.msg_added_to_favorite),
-                Toast.LENGTH_SHORT
-            ).show()
+                addedToFavorites = true
+
+                mBinding!!.ivFavoriteDish.setImageDrawable(
+                    ContextCompat.getDrawable(
+                        requireActivity(),
+                        R.drawable.ic_favorite_selected
+                    )
+                )
+
+                Toast.makeText(
+                    requireActivity(),
+                    resources.getString(R.string.msg_added_to_favorite),
+                    Toast.LENGTH_SHORT
+                ).show()
+            }
         }
     }
 
