@@ -1,4 +1,4 @@
-<h1 align="center">Jetpack Masterclass</h1></br>
+<h1 align="center"> 🍔 Jetpack Masterclass 🍟 </h1></br>
 
 <p align="center">
 Android 11 Jetpack Masterclass Udemy Course by Denis Panjuta 🧑🏻‍💻
@@ -14,7 +14,7 @@ Android 11 Jetpack Masterclass Udemy Course by Denis Panjuta 🧑🏻‍💻
 <img src="https://user-images.githubusercontent.com/47380312/131141561-903ec789-d8de-4e7c-b7d6-d7df42bcab33.gif" width="32%"/>
 </p>
 
-## MAD Score
+## 🥇 MAD Score
 
 <p align="center">
 <img src="https://user-images.githubusercontent.com/47380312/131141877-8f370eb5-4ef2-49ee-b834-e3e0d4f40b54.png" width="45%"/>
@@ -22,7 +22,7 @@ Android 11 Jetpack Masterclass Udemy Course by Denis Panjuta 🧑🏻‍💻
 <img src="https://user-images.githubusercontent.com/47380312/131142030-1d8171ca-99c4-405a-ace4-06214b95139c.png" width="45%"/>
 </p>
 
-## Tech stack & Open-Source Libraries
+## 📚 Tech stack & Open-Source Libraries
 - [Glide](https://github.com/bumptech/glide)
 - [Retrofit](https://square.github.io/retrofit/)
 - [Live Data](https://developer.android.com/topic/libraries/architecture/livedata)
@@ -34,14 +34,16 @@ Android 11 Jetpack Masterclass Udemy Course by Denis Panjuta 🧑🏻‍💻
 - [View Binding](https://developer.android.com/topic/libraries/view-binding)
 - [sdp Library](https://github.com/intuit/sdp)
 
-## Open API
+## 🍽 Open API
 
 <img src="https://user-images.githubusercontent.com/47380312/131144132-69a3ad3e-1eb7-4056-8121-269296776e6c.png" align = "right" width="10%"/>
 
-FavDish using the [spoonacular API](https://spoonacular.com/food-api) for constructing RESTful API.
+FavDish using the [Spoonacular API](https://spoonacular.com/food-api) for constructing RESTful API.
 spoonacular API provides a RESTful API interface to highly detailed objects built from thousands of lines of data related to Food.
 
-## Architecture
+Sign Up Spoonacular API website and get your free API key. Open Constants.kt file and put your API key value! Now you can use this app ✨
+
+## 🏰 Architecture
 
 <img src="https://user-images.githubusercontent.com/47380312/131144966-45fc25b7-8e5a-412f-ab48-8d16ba7302a1.png" align = "center" width="80%"/>
 
